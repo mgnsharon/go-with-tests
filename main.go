@@ -11,5 +11,5 @@ func main() {
 
 	// Separate the domain code from the side effects
 	// The message is the domain, the printing is the side effect
-	fmt.Println(hello.Hello())
+	fmt.Println(hello.Hello("world"))
 }
