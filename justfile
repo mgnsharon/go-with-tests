@@ -6,5 +6,5 @@ cover PACKAGE:
     go test -coverprofile=coverage/{{PACKAGE}}.out ./{{PACKAGE}}
     go tool cover -html=coverage/{{PACKAGE}}.out
 
-run:
+go:
     go run main.go
