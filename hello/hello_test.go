@@ -1,6 +1,7 @@
 package hello
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -25,4 +26,10 @@ func TestHello(t *testing.T) {
 			}
 		})
 	}
+}
+
+func ExampleHello() {
+	greeting := Hello("Jesus", Spanish)
+	fmt.Println(greeting)
+	// Output: Hola, Jesus
 }

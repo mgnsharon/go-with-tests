@@ -2,7 +2,7 @@ coverdir := "coverage"
 
 testall:
     echo "running tests for all packages..."
-    go test -v ./...
+    go test ./...
 
 coverall:
     go test -coverprofile={{coverdir}}/all.out ./...
@@ -18,3 +18,6 @@ cover PACKAGE:
 
 go:
     go run main.go
+
+doc PORT:
+    godoc -http=:{{PORT}}
