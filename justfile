@@ -1,3 +1,7 @@
+testall:
+    echo "running tests for all packages..."
+    go test
+
 test TEST:
     echo "running tests for {{TEST}} package..."
     go test -v ./{{TEST}}
