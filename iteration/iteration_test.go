@@ -59,7 +59,7 @@ func TestRepeatWithStrings(t *testing.T) {
 
 	for _, tc := range tcs {
 		t.Run(tc.name, func(t *testing.T) {
-			actual := Repeat(tc.char, tc.times)
+			actual := RepeatWStrings(tc.char, tc.times)
 			if actual != tc.expected {
 				t.Errorf("Repeat(%s, %d) = %s; want %s", tc.char, tc.times, actual, tc.expected)
 			}
@@ -69,6 +69,6 @@ func TestRepeatWithStrings(t *testing.T) {
 
 func BenchmarkRepeatWithStrings(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		Repeat("z", 3)
+		RepeatWStrings("z", 3)
 	}
 }
