@@ -33,7 +33,7 @@ func TestSumAll(t *testing.T) {
 		nums   [][]int
 		totals []int
 	}{
-		{"Test 1", [][]int{[]int{1, 2, 3}, []int{4, 5, 6}}, []int{6, 15}},
+		{"Test 1", [][]int{{1, 2, 3}, {4, 5, 6}}, []int{6, 15}},
 	}
 
 	for _, tc := range tcs {
@@ -52,7 +52,7 @@ func TestSumVariadic(t *testing.T) {
 		nums   [][]int
 		totals []int
 	}{
-		{"Test 1", [][]int{[]int{1, 2, 3}, []int{4, 5, 6}}, []int{6, 15}},
+		{"Test 1", [][]int{{1, 2, 3}, {4, 5, 6}}, []int{6, 15}},
 	}
 
 	for _, tc := range tcs {
@@ -71,10 +71,10 @@ func TestSumTails(t *testing.T) {
 		nums   [][]int
 		totals []int
 	}{
-		{"Test 1", [][]int{[]int{1, 2, 3}, []int{4, 5, 6}}, []int{5, 11}},
+		{"Test 1", [][]int{{1, 2, 3}, {4, 5, 6}}, []int{5, 11}},
 		{"Empty slice", [][]int{}, []int{}},
-		{"Empty slice in nums", [][]int{[]int{}, []int{2, 3, 4, 5}}, []int{0, 12}},
-		{"Single num slice in nums", [][]int{[]int{5}, []int{2, 3, 4, 5}}, []int{0, 12}},
+		{"Empty slice in nums", [][]int{{}, {2, 3, 4, 5}}, []int{0, 12}},
+		{"Single num slice in nums", [][]int{{5}, {2, 3, 4, 5}}, []int{0, 12}},
 	}
 	for _, tc := range tcs {
 		t.Run(tc.name, func(t *testing.T) {
@@ -99,7 +99,7 @@ func BenchmarkSum(b *testing.B) {
 }
 
 func ExampleSumAll() {
-	sum := SumAll([][]int{[]int{1, 2, 3, 4, 5}, []int{1, 2, 3}})
+	sum := SumAll([][]int{{1, 2, 3, 4, 5}, {1, 2, 3}})
 	fmt.Println(sum)
 	// Output: [15 6]
 }
@@ -112,7 +112,7 @@ func ExampleSumTails() {
 
 func BenchmarkSumAll(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		SumAll([][]int{[]int{1, 2, 3, 4, 5}, []int{1, 2, 3}})
+		SumAll([][]int{{1, 2, 3, 4, 5}, {1, 2, 3}})
 	}
 }
 
