@@ -35,3 +35,7 @@ go:
 # launches the docs server
 doc PORT:
     godoc -http=:{{PORT}}
+
+# runs go vet on a package
+vet PACKAGE:
+    go vet ./{{PACKAGE}}
