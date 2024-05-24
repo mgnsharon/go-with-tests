@@ -1,5 +1,5 @@
-# Learn Go with Tests
-[![Go Coverage](https://github.com/USER/REPO/wiki/coverage.svg)](https://raw.githack.com/wiki/USER/REPO/coverage.html)
+# Learn Go with Tests  [![Go Coverage](https://github.com/mgnsharon/go-with-tests/wiki/coverage.svg)](https://raw.githack.com/wiki/mgnsharon/go-with-tests/coverage.html)
+
 This repository contains my code from [Learn Go with Tests](https://quii.gitbook.io/learn-go-with-tests)
 
 It's meant to:
