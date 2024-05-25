@@ -39,3 +39,15 @@ doc PORT:
 # runs go vet on a package
 vet PACKAGE:
     go vet ./{{PACKAGE}}
+
+# runs go vet on all packages
+vetall:
+    go vet ./...
+
+# runs go fmt on all packages
+fmtall:
+    go fmt ./...
+
+# runs go fmt on a package
+fmt PACKAGE:
+    go fmt ./{{PACKAGE}}
