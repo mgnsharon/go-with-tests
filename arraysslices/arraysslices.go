@@ -2,7 +2,6 @@ package arraysslices
 
 // Sum calculates the sum of a slice of integers
 func Sum(nums []int) (sum int) {
-
 	for _, v := range nums {
 		sum += v
 	}
