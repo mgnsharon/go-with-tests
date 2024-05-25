@@ -51,3 +51,6 @@ fmtall:
 # runs go fmt on a package
 fmt PACKAGE:
     go fmt ./{{PACKAGE}}
+
+pkggen:
+    go build -o pkggen/pkggen ./pkggen/main.go
