@@ -52,5 +52,6 @@ fmtall:
 fmt PACKAGE:
     go fmt ./{{PACKAGE}}
 
+# builds the pkggen utility
 pkggen:
     go build -o pkggen/pkggen ./pkggen/main.go
