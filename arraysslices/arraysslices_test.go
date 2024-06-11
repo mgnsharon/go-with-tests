@@ -11,6 +11,7 @@ func TestReduce(t *testing.T) {
 		name    string
 		items   []int
 		reducer func(int, int) int
+		initial int
 		total   int
 	}{
 		{
@@ -19,13 +20,14 @@ func TestReduce(t *testing.T) {
 			func(a, b int) int {
 				return a + b
 			},
+			0,
 			15,
 		},
 	}
 
 	for _, tc := range tcs {
 		t.Run(tc.name, func(t *testing.T) {
-			act := Reduce(tc.items, tc.reducer)
+			act := Reduce(tc.items, tc.reducer, tc.initial)
 			if act != tc.total {
 				t.Errorf("got %d expected %d given %v", act, tc.total, tc.items)
 			}
@@ -38,6 +40,7 @@ func TestReduceStrings(t *testing.T) {
 		name    string
 		items   []string
 		reducer func(string, string) string
+		initial string
 		total   string
 	}{
 		{
@@ -46,13 +49,14 @@ func TestReduceStrings(t *testing.T) {
 			func(a, b string) string {
 				return a + b
 			},
+			"",
 			"hello",
 		},
 	}
 
 	for _, tc := range tcs {
 		t.Run(tc.name, func(t *testing.T) {
-			act := Reduce(tc.items, tc.reducer)
+			act := Reduce(tc.items, tc.reducer, tc.initial)
 			if act != tc.total {
 				t.Errorf("got %s expected %s given %v", act, tc.total, tc.items)
 			}
