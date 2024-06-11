@@ -6,6 +6,60 @@ import (
 	"testing"
 )
 
+func TestReduce(t *testing.T) {
+	tcs := []struct {
+		name    string
+		items   []int
+		reducer func(int, int) int
+		total   int
+	}{
+		{
+			"reduce ints",
+			[]int{1, 2, 3, 4, 5},
+			func(a, b int) int {
+				return a + b
+			},
+			15,
+		},
+	}
+
+	for _, tc := range tcs {
+		t.Run(tc.name, func(t *testing.T) {
+			act := Reduce(tc.items, tc.reducer)
+			if act != tc.total {
+				t.Errorf("got %d expected %d given %v", act, tc.total, tc.items)
+			}
+		})
+	}
+}
+
+func TestReduceStrings(t *testing.T) {
+	tcs := []struct {
+		name    string
+		items   []string
+		reducer func(string, string) string
+		total   string
+	}{
+		{
+			"reduce ints",
+			[]string{"h", "e", "l", "l", "o"},
+			func(a, b string) string {
+				return a + b
+			},
+			"hello",
+		},
+	}
+
+	for _, tc := range tcs {
+		t.Run(tc.name, func(t *testing.T) {
+			act := Reduce(tc.items, tc.reducer)
+			if act != tc.total {
+				t.Errorf("got %s expected %s given %v", act, tc.total, tc.items)
+			}
+		})
+	}
+}
+
 func TestSum(t *testing.T) {
 	tcs := []struct {
 		name  string

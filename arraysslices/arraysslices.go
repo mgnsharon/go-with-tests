@@ -37,3 +37,11 @@ func SumTails(nums ...[]int) []int {
 	}
 	return totals
 }
+
+func Reduce[T any](items []T, reducer func(T, T) T) T {
+	var total T
+	for _, item := range items {
+		total = reducer(total, item)
+	}
+	return total
+}
